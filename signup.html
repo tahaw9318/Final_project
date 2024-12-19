@@ -96,3 +96,216 @@
             background-color: #ff4081;
             transform: scale(1.1);
         }
+
+        /* Sign-Up Section */
+        .signup-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 40px 20px;
+            margin-top: 80px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 12px;
+            max-width: 350px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            animation: fadeInSection 1s ease-in-out; /* Fade-in effect for sign-up section */
+        }
+
+        /* Fade-in animation for sign-up section */
+        @keyframes fadeInSection {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .signup-section h2 {
+            font-size: 2.2rem;
+            color: #ff4081;
+            margin-bottom: 15px;
+            text-align: center;
+            animation: bounceIn 1s ease-out; /* Bounce animation for heading */
+        }
+
+        /* Bounce-in animation for h2 */
+        @keyframes bounceIn {
+            0% {
+                transform: translateY(-50px);
+            }
+            50% {
+                transform: translateY(20px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        .signup-section p {
+            font-size: 1rem;
+            color: white;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .signup-form {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .input-field {
+            padding: 8px;
+            margin-bottom: 12px;
+            font-size: 0.9rem;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: #222;
+            color: white;
+            transition: transform 0.3s ease, border 0.3s ease; /* Input animation on focus */
+        }
+
+        .input-field:focus {
+            transform: scale(1.05); /* Slight scale increase on focus */
+            border-color: #ff4081; /* Change border color on focus */
+        }
+
+        .submit-btn {
+            background-color: #00bcd4;
+            color: white;
+            border: none;
+            padding: 10px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            border-radius: 30px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: #ff4081;
+            transform: scale(1.1);
+        }
+
+        /* Footer Section */
+        .footer {
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 8px;
+            font-size: 1rem;
+            margin-top: auto;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                padding: 10px 20px;
+            }
+
+            .navbar .logo {
+                font-size: 1.6rem;
+                text-align: center;
+                margin-bottom: 12px;
+            }
+
+            .nav-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .auth-button {
+                width: 100%;
+                margin: 8px 0;
+            }
+
+            .signup-section h2 {
+                font-size: 1.8rem;
+            }
+
+            .signup-section p {
+                font-size: 1rem;
+            }
+
+            .input-field {
+                font-size: 0.8rem;
+            }
+
+            .submit-btn {
+                font-size: 1rem;
+            }
+        }
+
+        /* Mobile-First Design */
+        @media (max-width: 480px) {
+            .navbar {
+                padding: 12px;
+            }
+
+            .navbar .logo {
+                font-size: 1.4rem;
+            }
+
+            .submit-btn {
+                font-size: 0.9rem;
+            }
+
+            .signup-section h2 {
+                font-size: 1.6rem;
+            }
+
+            .footer {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar Section -->
+    <nav class="navbar">
+        <h1 class="logo">Quizics</h1>
+        <div class="nav-buttons">
+            <a href="index11.html" class="auth-button">Home</a>
+            <a href="about.html" class="auth-button">About us</a>
+            <a href="login.html" class="auth-button" id="login-btn">Login</a>
+        </div>
+    </nav>
+
+    <!-- Sign-Up Section -->
+    <section class="signup-section">
+        <h2>Create Your Account</h2>
+        <p>Sign up to access quizzes, view your activity, and challenge your friends!</p>
+        <form class="signup-form">
+            <input type="email" class="input-field" placeholder="Email" required>
+            <input type="text" class="input-field" placeholder="Username" required>
+            <input type="password" class="input-field" placeholder="Password" required>
+            <input type="tel" class="input-field" placeholder="Phone Number (Optional)">
+            <button type="submit" class="submit-btn">Sign Up</button>
+        </form>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>&copy; 2024 Quizics. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
