@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Quizics</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body and Background */
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            font-family: 'Arial', sans-serif;
+            background-image: url('C:/Users/alina/OneDrive/Desktop/index0.1.jpeg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding-top: 80px; /* Adjust padding for the fixed navbar */
+            margin: 0;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Navbar Section */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: rgba(0, 0, 0, 0.6);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 10;
+            animation: slideDown 1s ease-in-out;
+        }
+
+        .navbar .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #00bcd4;
+            animation: zoomIn 1s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .nav-buttons {
+            display: flex;
+        }
+
+        .auth-button {
+            background-color: #00bcd4;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            cursor: pointer;
+            border-radius: 30px;
+            font-size: 1rem;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            animation: buttonPop 1.2s ease-out;
+        }
+
+        .auth-button:hover {
+            background-color: #ff4081;
+            transform: scale(1.1);
+        }
+
+        @keyframes buttonPop {
+            0% {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* About Section */
+        .about-section {
+            text-align: center;
+            padding: 80px 20px;
+            margin-top: 80px; /* Avoid content being covered by the fixed navbar */
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            max-width: 70%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 100px; /* Ensure there's space before footer */
+            animation: slideUp 1s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .about-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #ff4081;
+        }
+
+        .about-section p {
+            font-size: 1.2rem;
+            margin: 10px 0;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        /* Footer Section */
+        .footer {
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            font-size: 1rem;
+            position: relative;
+            margin-top: auto;
+            animation: fadeInBottom 1.5s ease-in-out;
+        }
+
+        @keyframes fadeInBottom {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                padding: 20px 20px;
+            }
+
+            .navbar .logo {
+                font-size: 1.8rem;
+                text-align: center;
+                margin-bottom: 15px;
+            }
+
+            .nav-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .auth-button {
+                width: 100%;
+                margin: 10px 0;
+            }
+
+            .about-section h2 {
+                font-size: 2rem;
+            }
+
+            .about-section p {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar {
+                padding: 15px;
+            }
+
+            .navbar .logo {
+                font-size: 1.6rem;
+            }
+
+            .auth-button {
+                font-size: 0.9rem;
+            }
+
+            .about-section h2 {
+                font-size: 1.8rem;
+            }
+
+            .about-section p {
+                font-size: 1rem;
+            }
+
+            .footer {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar Section -->
+    <nav class="navbar">
+        <h1 class="logo">Quizics</h1>
+        <div class="nav-buttons">
+            <a href="about.html" class="auth-button">About Us</a>
+            <a href="login.html" class="auth-button">Login</a>
+            <a href="signup.html" class="auth-button">Sign Up</a>
+        </div>
+    </nav>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <h2>About Quizics</h2>
+        <p>Welcome to Quizics – the ultimate platform where education meets fun! Our mission is to make learning a fun and interactive experience for everyone, regardless of age or background.</p>
+        <p>Quizics offers a variety of quizzes across multiple subjects such as history, science, literature, sports, and more. Whether you're a student, a professional, or simply a trivia enthusiast, you'll find quizzes that challenge and entertain you.</p>
+        <p>We believe in the power of knowledge and its ability to transform lives. That’s why we've created a space where you can test your knowledge, compete with friends, and even earn exciting rewards. With a mix of educational content and competitive gameplay, Quizics ensures that learning is always engaging!</p>
+        <p>Our platform is designed to offer quizzes that cater to all learning styles. From casual quizzes to advanced challenges, we have something for everyone. Join a community of like-minded individuals who share your passion for knowledge and fun!</p>
+        <p>Ready to take on the challenge? Get started now by signing up, or if you're already a member, log in to continue your journey!</p>
+
+        <!-- Sign Up and Login Buttons -->
+        <div>
+            <a href="signup.html" class="auth-button">Sign Up</a>
+            <a href="login.html" class="auth-button">Login</a>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>&copy; 2024 Quizics. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
