@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizics - Login</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body and Background */
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            font-family: 'Arial', sans-serif;
+            background-image: url('C:/Users/alina/OneDrive/Desktop/index0.2.jpeg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            animation: gradientShift 5s infinite alternate ease-in-out;
+        }
+
+        @keyframes gradientShift {
+            from {
+                filter: hue-rotate(0deg);
+            }
+            to {
+                filter: hue-rotate(360deg);
+            }
+        }
+
+        /* Navbar Section */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: rgba(0, 0, 0, 0.6);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 10;
+            animation: slideDown 1s ease-in-out;
+        }
+
+        .navbar .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #00bcd4;
+        }
+
+        .nav-buttons {
+            display: flex;
+        }
+
+        .auth-button {
+            background-color: #00bcd4;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            cursor: pointer;
+            border-radius: 30px;
+            font-size: 1rem;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .auth-button:hover {
+            background-color: #ff4081;
+            transform: scale(1.1);
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Header Section */
+        .header {
+            text-align: center;
+            margin-top: 100px; /* Adjust for fixed navbar */
+            margin-bottom: 20px;
+            padding: 20px;
+            animation: fadeAndZoom 1.2s ease-out;
+        }
+
+        .header h1 {
+            font-size: 2.8rem;
+            color: #ff4081;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            color: #fff;
+        }
