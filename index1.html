@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizics</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body and Background */
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            background-image: url(file:///C:/Users/alina/OneDrive/Desktop/web0.3.jpg);
+            background-size: cover;
+            background-position: center;
+            color: white;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Navbar Section */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: rgba(0, 0, 0, 0.6);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 10;
+            animation: slideDown 1s ease-in-out;
+        }
+
+        .navbar .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #00bcd4;
+            animation: zoomIn 1s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .nav-buttons {
+            display: flex;
+        }
+
+        .auth-button {
+            background-color: #00bcd4;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            cursor: pointer;
+            border-radius: 30px;
+            font-size: 1rem;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            animation: buttonPop 1.2s ease-out;
+        }
+
+        .auth-button:hover {
+            background-color: #ff4081;
+            transform: scale(1.1);
+        }
+
+        @keyframes buttonPop {
+            0% {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* Header Section */
+        .header {
+            text-align: center;
+            padding: 80px 20px 50px;
+            margin-top: 80px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            max-width: 70%;
+            margin-left: auto;
+            margin-right: auto;
+            animation: headerBounce 1.5s ease-out;
+        }
+
+        @keyframes headerBounce {
+            0% {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            60% {
+                transform: translateY(10px);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        .header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #ff4081;
+            animation: textFadeIn 2s ease;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            margin: 10px 0;
+            color: #fff;
+        }
