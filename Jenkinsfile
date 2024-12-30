@@ -27,15 +27,16 @@ pipeline {
                 bat 'dir' // List the files in the workspace
             }
         }
-        stage('Build Docker Image') {
-            steps {
-                script {
-                    dir('Ecommerce-Frontend') { // Navigate into the cloned repo directory
-                        bat 'docker build -t %DOCKER_IMAGE% .'
-                    }
-                }
+   stage('Build Docker Image') {
+    steps {
+        script {
+            dir('Final_project') { // Correct directory name
+                bat 'docker build -t %DOCKER_IMAGE% .'
             }
         }
+    }
+}
+
         stage('Push Docker Image') {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'docker-credentials', 
