@@ -47,8 +47,13 @@ pipeline {
                                                   usernameVariable: 'DOCKER_USERNAME', 
                                                   passwordVariable: 'DOCKER_PASSWORD')]) {
                     script {
-                        // Login to Docker Hub and push the image
-                        bat "echo %DOCKER_PASSWORD% | docker login %DOCKER_REGISTRY% -u %DOCKER_USERNAME% --password-stdin"
+                      // Step 1: Echo the password to Docker login
+                        bat "echo %DOCKER_PASSWORD% > docker_password.txt"
+                        
+                        // Step 2: Login to Docker Hub
+                        bat "docker login %DOCKER_REGISTRY% -u %DOCKER_USERNAME% --password-stdin < docker_password.txt"
+                        
+                        // Step 3: Push the Docker image
                         bat "docker push %DOCKER_IMAGE%"
                     }
                 }
