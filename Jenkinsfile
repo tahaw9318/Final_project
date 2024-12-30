@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        DOCKER_IMAGE = 'alina222619/quiz:latest'
+        DOCKER_IMAGE = 'taha221016/quiz:latest'
         DOCKER_REGISTRY = 'docker.io'
     }
     stages {
