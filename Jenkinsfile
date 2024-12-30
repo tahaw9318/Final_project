@@ -41,25 +41,28 @@ pipeline {
             }
         }
 
-        stage('Push Docker Image') {
+       stage('Push Docker Image') {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'docker-credentials', 
                                                   usernameVariable: 'DOCKER_USERNAME', 
                                                   passwordVariable: 'DOCKER_PASSWORD')]) {
                     script {
-                      // Step 1: Echo the password to Docker login
-                        bat "echo %DOCKER_PASSWORD% > docker_password.txt"
-                        
-                        // Step 2: Login to Docker Hub
-                        bat "docker login %DOCKER_REGISTRY% -u %DOCKER_USERNAME% --password-stdin < docker_password.txt"
-                        
-                        // Step 3: Push the Docker image
-                        bat "docker push %DOCKER_IMAGE%"
+                        echo "Logging in to Docker registry: ${DOCKER_REGISTRY} with user: ${DOCKER_USERNAME}"
+
+                        bat """
+                            docker login %DOCKER_REGISTRY% -u %DOCKER_USERNAME% -p %DOCKER_PASSWORD%
+                        """
+
+                        echo "Pushing Docker image: ${DOCKER_IMAGE}"
+
+                        bat """
+                            docker push %DOCKER_IMAGE%
+                        """
+
                     }
                 }
             }
         }
-
         stage('Run Docker Container') {
             steps {
                 script {
