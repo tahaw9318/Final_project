@@ -1,19 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: app-deployment
+  name: my-app
+  labels:
+    app: my-app
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: app-name
+      app: my-app
   template:
     metadata:
       labels:
-        app: app-name
+        app: my-app
     spec:
       containers:
-      - name: app-container
-        image: username/app-name:latest
+      - name: my-app
+        image: taha221016/quiz:latest
         ports:
         - containerPort: 3000
